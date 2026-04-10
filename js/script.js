@@ -13,8 +13,12 @@ function shuffleItems(textarea) {
 
 
 async function rollDice(textarea) {
+    textarea.style.backgroundColor = 'purple';
+    textarea.style.color = 'white';
     for (let i = 0; i < 50; i++){
         await sleep(50);
         shuffleItems(textarea);
     }
+    textarea.style.backgroundColor = 'white';
+    textarea.style.color = 'black';
 }
