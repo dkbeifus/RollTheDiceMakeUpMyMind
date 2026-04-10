@@ -9,7 +9,7 @@
         <div class="section">
             <label for="choice_list">Choose From These Items</label>
             <textarea class="scrollabletextbox" id="choice_list_1" name="choice_list_1" placeholder="Enter each choice on a new line"></textarea>
-            <button type="button" class="button button_roll" for="choice_list" id="button_roll_the_dice" name="choice_list_1">Roll The Dice</button>
+            <button type="button" class="button button_roll" for="choice_list" id="button_roll_the_dice" name="choice_list_1" onclick="rollDice(document.getElementById(this.name))">Roll The Dice</button>
             <button type="button" class="button button_shuffle" for="choice_list" id="button_shuffle" name="choice_list_1" onclick="shuffleItems(document.getElementById(this.name))">Shuffle Choices</button>
             <button type="button" class="button button_import" for="choice_list" id="button_shuffle" name="choice_list_1">Import From File</button>
             <button type="button" class="button button_export" for="choice_list" id="button_shuffle" name="choice_list_1">Export To File</button>
