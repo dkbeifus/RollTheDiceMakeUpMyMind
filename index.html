@@ -1,22 +1,22 @@
-<html>
+<!DOCTYPE html>
     <head>
         <title>CMPA 4303 Project - Daniel Beifus - Roll The Dice Make Up My Mind Page</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
     <body>
         <h1>Roll The Dice, Make Up My Mind!</h1>
-        <h2>Site Under Construction</h2>
         <div class="section">
             <label for="choice_list">Choose From These Items</label>
-            <textarea class="scrollabletextbox" id="choice_list_1" name="choice_list_1" placeholder="Enter each choice on a new line"></textarea>
-            <button type="button" class="button button_roll" for="choice_list" id="button_roll_the_dice" name="choice_list_1" onclick="rollDice(document.getElementById(this.name))">Roll The Dice</button>
+            <input class="large_choice" type="text" id="choice_list_1_choice" name="choice_list_1" value="Roll To Choose" readonly />
+            <textarea class="large_list" id="choice_list_1" name="choice_list_1" placeholder="Enter each choice on a new line"></textarea>
+            <button type="button" class="button button_roll" for="choice_list" id="button_roll_the_dice" name="choice_list_1" onclick="rollDice(document.getElementById(this.name), document.getElementById(this.name + '_choice'))">Roll The Dice</button>
             <button type="button" class="button button_shuffle" for="choice_list" id="button_shuffle" name="choice_list_1" onclick="shuffleItems(document.getElementById(this.name))">Shuffle Choices</button>
-            <button type="button" class="button button_import" for="choice_list" id="button_shuffle" name="choice_list_1">Import From File</button>
-            <button type="button" class="button button_export" for="choice_list" id="button_shuffle" name="choice_list_1">Export To File</button>
+            <button type="button" class="button button_import" for="choice_list" id="button_import" name="choice_list_1" onclick="importListFromFile(document.getElementById(this.name), document.getElementById(this.name + '_fileInput'))">Import From File</button>
+            <button type="button" class="button button_export" for="choice_list" id="button_export" name="choice_list_1" onclick="saveListAsFile(document.getElementById(this.name))">Export To File</button>
+            <input type="file" id="choice_list_1_fileInput" accept=".txt" style="display:none;">
         </div>
         
         <div class="section">
-            <h2>Site Under Construction</h2>
         </div>
         <script src="js/script.js"></script>
     </body>

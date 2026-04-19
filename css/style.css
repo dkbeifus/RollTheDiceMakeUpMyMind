@@ -32,7 +32,8 @@ label{
     display:inline;
 }
 
-.scrollabletextbox {
+.large_list {
+    background: rgb(250, 246, 233);
     height:400px;
     width:410px;
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
@@ -41,9 +42,22 @@ label{
     display:block;
 }
 
+.large_choice {
+    background: beige;
+    color: purple;
+    height:15px;
+    width:410px;
+    font-weight: bold;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 82%;
+    overflow:scroll;
+    display:block;
+}
 
 .section {
     float: left;
     text-align: center;
     margin-left: 25px;
+    justify-content: center;
+    align-items: center;
 }
