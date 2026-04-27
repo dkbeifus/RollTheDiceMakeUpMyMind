@@ -13,7 +13,7 @@ function shuffleItems(textarea) {
 
 async function rollDice(textarea, choice_field) {
     textarea.style.backgroundColor = 'purple';
-    textarea.style.color = ' rgb(240, 230, 240)';
+    textarea.style.color = ' rgb(250, 246, 233)';
     for (let i = 0; i < 50; i++){
         await sleep(50); //50 ms pause
         shuffleItems(textarea);
@@ -22,7 +22,7 @@ async function rollDice(textarea, choice_field) {
     if (lines.length > 0 ){
         let i = Math.floor(Math.random() * (lines.length));
         choice_field.value = "The Dice Chose: " + lines[i];
-        textarea.style.backgroundColor = ' rgb(240, 230, 240)';
+        textarea.style.backgroundColor = ' rgb(250, 246, 233)';
         textarea.style.color = 'black';
     }
 }

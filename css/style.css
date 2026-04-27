@@ -26,23 +26,20 @@ label{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display:block;
     font-size: 32px;
+    
 }
 
-.button {
-    display:inline;
+.dice_tray {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
 
-.large_list {
-    background: rgb(250, 246, 233);
-    height:400px;
-    width:410px;
-    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
-    font-size: 82%;
-    overflow:scroll;
-    display:block;
+.choice_area{
+    display: grid;
+    place-items: center
 }
 
-.large_choice {
+.choice_decision {
     background: beige;
     color: purple;
     height:15px;
@@ -51,13 +48,18 @@ label{
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     font-size: 82%;
     overflow:scroll;
-    display:block;
 }
 
-.section {
-    float: left;
-    text-align: center;
-    margin-left: 25px;
-    justify-content: center;
-    align-items: center;
+.choice_list {
+    background: rgb(250, 246, 233);
+    height:400px;
+    width:410px;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 82%;
+    overflow:scroll;
 }
+
+.choice_button {
+    display:inline;
+}
+
