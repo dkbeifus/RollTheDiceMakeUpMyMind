@@ -5,6 +5,7 @@
     </head>
     <body>
         <h1>Roll The Dice, Make Up My Mind!</h1>
+        <h2>Enter your own list or import one from a text file.  Each line is a separate choice.</h2>
         <div class="dice_tray">
             <div class="choice_area">
                 <label class="choice_label" for="choice_list_1">Choose From These Items</label>
@@ -40,6 +41,18 @@
                     <button type="choice_button" class="button button_import" for="choice_list" id="button_import" name="choice_list_3" onclick="importListFromFile(document.getElementById(this.name), document.getElementById(this.name + '_fileInput'))">Import From File</button>
                     <button type="choice_button" class="button button_export" for="choice_list" id="button_export" name="choice_list_3" onclick="saveListAsFile(document.getElementById(this.name))">Export To File</button>
                     <input type="file" id="choice_list_3_fileInput" accept=".txt" style="display:none;">
+                </div>
+            </div>
+            <div class="choice_area">
+                <label class="choice_label" for="choice_list_4">Choose From These Items</label>
+                <input class="choice_decision" type="text" id="choice_list_4_choice" name="choice_list_4" value="Roll To Choose" readonly />
+                <textarea class="choice_list" id="choice_list_4" name="choice_list_4" placeholder="Enter each choice on a new line"></textarea>
+                <div class="choic_button_row">
+                    <button type="choice_button" class="button button_roll" for="choice_list" id="button_roll_the_dice" name="choice_list_4" onclick="rollDice(document.getElementById(this.name), document.getElementById(this.name + '_choice'))">Roll The Dice</button>
+                    <button type="choice_button" class="button button_shuffle" for="choice_list" id="button_shuffle" name="choice_list_4" onclick="shuffleItems(document.getElementById(this.name))">Shuffle Choices</button>
+                    <button type="choice_button" class="button button_import" for="choice_list" id="button_import" name="choice_list_4" onclick="importListFromFile(document.getElementById(this.name), document.getElementById(this.name + '_fileInput'))">Import From File</button>
+                    <button type="choice_button" class="button button_export" for="choice_list" id="button_export" name="choice_list_4" onclick="saveListAsFile(document.getElementById(this.name))">Export To File</button>
+                    <input type="file" id="choice_list_4_fileInput" accept=".txt" style="display:none;">
                 </div>
             </div>
         </div>

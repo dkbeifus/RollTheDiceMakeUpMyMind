@@ -1,7 +1,7 @@
 body{
     background-image: url("../images/paper-background.jpg");
-    margin: 15px;
-    margin-top: 35px;
+    margin: 10px;
+    margin-top: 20px;
 }
 
 h1{
@@ -10,14 +10,16 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center; 
     font-size: 60px;
+    margin-bottom: 10px;
 }
 
 h2{
     color: #5d0f7c;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center; 
-    font-size: 48px;
+    text-align:center ; 
+    font-size: 25px;
+    margin-top: 5px;
 }
 
 label{
@@ -46,7 +48,7 @@ label{
     width:410px;
     font-weight: bold;
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
-    font-size: 82%;
+    font-size: 125%;
     overflow:scroll;
 }
 
@@ -55,7 +57,7 @@ label{
     height:400px;
     width:410px;
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
-    font-size: 82%;
+    font-size: 100%;
     overflow:scroll;
 }
 
