@@ -48,8 +48,7 @@ function create_list_div(){
     newListButtonDiv.classList.add('choice_button_row');
     
     const buttonDivRoll = document.createElement('button');
-    buttonDivRoll.classList.add('button');
-    buttonDivRoll.classList.add('button_roll');
+    buttonDivRoll.classList.add('choice_button');
     buttonDivRoll.setAttribute('for', 'choice_list');
     buttonDivRoll.setAttribute('name', 'choice_list_' + counter);
     buttonDivRoll.setAttribute('type', 'choice_button');
@@ -59,8 +58,7 @@ function create_list_div(){
     newListButtonDiv.appendChild(buttonDivRoll);
     
     const buttonDivShuffle= document.createElement('button');
-    buttonDivShuffle.classList.add('button');
-    buttonDivShuffle.classList.add('button_shuffle');
+    buttonDivShuffle.classList.add('choice_button');
     buttonDivShuffle.setAttribute('for', 'choice_list');
     buttonDivShuffle.setAttribute('name', 'choice_list_' + counter);
     buttonDivShuffle.setAttribute('id', 'button_shuffle');
@@ -69,9 +67,8 @@ function create_list_div(){
     newListButtonDiv.appendChild(buttonDivShuffle);
     
     const buttonDivImport = document.createElement('button');
-    buttonDivImport.classList.add('button');
-    buttonDivImport.classList.add('button_import');
-    buttonDivImport.setAttribute('for', 'choice_list');
+    buttonDivImport.classList.add('choice_button');
+      buttonDivImport.setAttribute('for', 'choice_list');
     buttonDivImport.setAttribute('name', 'choice_list_' + counter);
     buttonDivImport.setAttribute('id', 'button_import');
     buttonDivImport.setAttribute('onclick', "importListFromFile(document.getElementById(this.name), document.getElementById(this.name + '_fileInput'))");
@@ -79,8 +76,7 @@ function create_list_div(){
     newListButtonDiv.appendChild(buttonDivImport);
     
     const buttonDivExport = document.createElement('button');
-    buttonDivExport.classList.add('button');
-    buttonDivExport.classList.add('button_export');
+    buttonDivExport.classList.add('choice_button');
     buttonDivExport.setAttribute('for', 'choice_list');
     buttonDivExport.setAttribute('name', 'choice_list_' + counter);
     buttonDivExport.setAttribute('id', 'button_export');
