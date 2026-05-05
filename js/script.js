@@ -11,6 +11,117 @@ function shuffleItems(textarea) {
     textarea.value = lines.join('\n');
 }
 
+function create_list_div(){
+    const dice_tray = document.getElementById('diceTray');
+    counter_element = document.getElementById('hidden_number');
+    let counter = parseInt(counter_element.textContent);
+    counter = counter + 1;
+    counter = counter.toString();
+    counter_element.textContent = counter;
+    
+    const newList = document.createElement('div');
+    newList.classList.add('choice_area');
+    
+    const newListLabel = document.createElement('label');
+    newListLabel.classList.add('choice_label');
+    newListLabel.setAttribute('for', 'choice_list_' + counter);
+    newListLabel.textContent = "Choose From These Items";
+    newList.appendChild(newListLabel);
+    
+    const newListInput = document.createElement('input');
+    newListInput.classList.add('choice_decision');
+    newListInput.setAttribute('type', 'text');
+    newListInput.setAttribute('id', 'choice_list_' + counter + '_choice');
+    newListInput.setAttribute('name', 'choice_list_' + counter);
+    newListInput.setAttribute('value', 'Roll To Choose');
+    newListInput.setAttribute('readonly', "True" );
+    newList.appendChild(newListInput);
+    
+    const newListTextArea = document.createElement('textarea');
+    newListTextArea.classList.add('choice_list');
+    newListTextArea.setAttribute('id', 'choice_list_' + counter);
+    newListTextArea.setAttribute('name', 'choice_list_' + counter);
+    newListInput.setAttribute('placeholder', 'Enter each choice on a new line');
+    newList.appendChild(newListTextArea);
+
+    const newListButtonDiv = document.createElement('div');
+    newListButtonDiv.classList.add('choice_button_row');
+    
+    const buttonDivRoll = document.createElement('button');
+    buttonDivRoll.classList.add('button');
+    buttonDivRoll.classList.add('button_roll');
+    buttonDivRoll.setAttribute('for', 'choice_list');
+    buttonDivRoll.setAttribute('name', 'choice_list_' + counter);
+    buttonDivRoll.setAttribute('type', 'choice_button');
+    buttonDivRoll.setAttribute('id', 'button_roll_the_dice');
+    buttonDivRoll.setAttribute('onclick', "rollDice(document.getElementById(this.name), document.getElementById(this.name + '_choice'))");
+    buttonDivRoll.textContent = "Roll The Dice";
+    newListButtonDiv.appendChild(buttonDivRoll);
+    
+    const buttonDivShuffle= document.createElement('button');
+    buttonDivShuffle.classList.add('button');
+    buttonDivShuffle.classList.add('button_shuffle');
+    buttonDivShuffle.setAttribute('for', 'choice_list');
+    buttonDivShuffle.setAttribute('name', 'choice_list_' + counter);
+    buttonDivShuffle.setAttribute('id', 'button_shuffle');
+    buttonDivShuffle.setAttribute('onclick', "shuffleItems(document.getElementById(this.name))");
+    buttonDivShuffle.textContent = "Shuffle Choices";
+    newListButtonDiv.appendChild(buttonDivShuffle);
+    
+    const buttonDivImport = document.createElement('button');
+    buttonDivImport.classList.add('button');
+    buttonDivImport.classList.add('button_import');
+    buttonDivImport.setAttribute('for', 'choice_list');
+    buttonDivImport.setAttribute('name', 'choice_list_' + counter);
+    buttonDivImport.setAttribute('id', 'button_import');
+    buttonDivImport.setAttribute('onclick', "importListFromFile(document.getElementById(this.name), document.getElementById(this.name + '_fileInput'))");
+    buttonDivImport.textContent = "Import From File";
+    newListButtonDiv.appendChild(buttonDivImport);
+    
+    const buttonDivExport = document.createElement('button');
+    buttonDivExport.classList.add('button');
+    buttonDivExport.classList.add('button_export');
+    buttonDivExport.setAttribute('for', 'choice_list');
+    buttonDivExport.setAttribute('name', 'choice_list_' + counter);
+    buttonDivExport.setAttribute('id', 'button_export');
+    buttonDivExport.setAttribute('onclick', "saveListAsFile(document.getElementById(this.name))");
+    buttonDivExport.textContent = "Export To File";
+    newListButtonDiv.appendChild(buttonDivExport);
+
+    const buttonDivFile = document.createElement('input');
+    buttonDivFile.setAttribute('type', 'file');
+    buttonDivFile.setAttribute('id', 'choice_list_' + counter + '_fileInput');
+    buttonDivFile.setAttribute('accept', '.txt');
+    buttonDivFile.setAttribute('style', 'display:none;');
+    newListButtonDiv.appendChild(buttonDivFile);
+
+    newList.appendChild(newListButtonDiv);
+    dice_tray.appendChild(newList);
+}
+
+function removeList(){
+    let visible_lists = document.querySelectorAll('[class*="choice_area"]');
+    visible_lists[visible_lists.length - 1].remove();
+    toggleDisableForRemove();
+}
+
+function addList() {
+    create_list_div();
+    toggleDisableForRemove();
+}
+
+function toggleDisableForRemove(){
+    let visible_lists = document.querySelectorAll('[class*="choice_area"]');
+    const removeButton = document.getElementById('remove_button');
+    if (visible_lists.length == 1){
+        removeButton.disabled = true;
+        removeButton.style.backgroundColor = 'rgb(116, 116, 116)';
+    }else{
+        removeButton.disabled = false;
+        removeButton.style.backgroundColor = 'beige';
+    }
+}
+
 async function rollDice(textarea, choice_field) {
     if (textarea.value.split('\n').filter(item => item.trim() !== '').length > 0 ){
         textarea.style.backgroundColor = 'purple';
@@ -59,3 +170,5 @@ async function importListFromFile(textarea, file_input_element){
     })
     file_input_element.click()
 }
+
+toggleDisableForRemove();
