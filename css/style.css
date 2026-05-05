@@ -60,11 +60,11 @@ label{
 .choice_decision {
     background: beige;
     color: purple;
-    height:15px;
+    height:60px;
     width:500px;
     font-weight: bold;
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
-    font-size: 125%;
+    font-size: 150%;
     overflow:scroll;
 }
 

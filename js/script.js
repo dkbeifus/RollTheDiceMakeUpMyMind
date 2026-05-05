@@ -28,20 +28,19 @@ function create_list_div(){
     newListLabel.textContent = "Choose From These Items";
     newList.appendChild(newListLabel);
     
-    const newListInput = document.createElement('input');
-    newListInput.classList.add('choice_decision');
-    newListInput.setAttribute('type', 'text');
-    newListInput.setAttribute('id', 'choice_list_' + counter + '_choice');
-    newListInput.setAttribute('name', 'choice_list_' + counter);
-    newListInput.setAttribute('value', 'Roll To Choose');
-    newListInput.setAttribute('readonly', "True" );
-    newList.appendChild(newListInput);
+    const newListAnswerArea = document.createElement('textarea');
+    newListAnswerArea.classList.add('choice_decision');
+    newListAnswerArea.setAttribute('id', 'choice_list_' + counter + '_choice');
+    newListAnswerArea.setAttribute('name', 'choice_list_' + counter);
+    newListAnswerArea.setAttribute('placeholder', 'Roll To Choose');
+    newListAnswerArea.setAttribute('readonly', "True" );
+    newList.appendChild(newListAnswerArea);
     
     const newListTextArea = document.createElement('textarea');
     newListTextArea.classList.add('choice_list');
     newListTextArea.setAttribute('id', 'choice_list_' + counter);
     newListTextArea.setAttribute('name', 'choice_list_' + counter);
-    newListInput.setAttribute('placeholder', 'Enter each choice on a new line');
+    newListTextArea.setAttribute('placeholder', 'Enter each choice on a new line');
     newList.appendChild(newListTextArea);
 
     const newListButtonDiv = document.createElement('div');
@@ -129,7 +128,7 @@ async function rollDice(textarea, choice_field) {
         let lines = textarea.value.split('\n').filter(item => item.trim() !== '');
         if (lines.length > 0 ){
             let i = Math.floor(Math.random() * (lines.length));
-            choice_field.value = "The Dice Chose: " + lines[i];
+            choice_field.value = "The Dice Chose:  \n" + lines[i];
             textarea.style.backgroundColor = ' rgb(250, 246, 233)';
             textarea.style.color = 'black';
         }

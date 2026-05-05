@@ -18,7 +18,7 @@
             <p id="hidden_number" hidden>1</p>
             <div class="choice_area">
                 <label class="choice_label" for="choice_list_1">Choose From These Items</label>
-                <input class="choice_decision" type="text" id="choice_list_1_choice" name="choice_list_1" value="Roll To Choose" readonly />
+                <textarea class="choice_decision" id="choice_list_1_choice" name="choice_list_1" placeholder="Roll To Choose" readonly></textarea>
                 <textarea class="choice_list" id="choice_list_1" name="choice_list_1" placeholder="Enter each choice on a new line"></textarea>
                 <div class="choice_button_row">
                     <button type="choice_button" class="choice_button" for="choice_list" id="button_roll_the_dice" name="choice_list_1" onclick="rollDice(document.getElementById(this.name), document.getElementById(this.name + '_choice'))">Roll The Dice</button>
